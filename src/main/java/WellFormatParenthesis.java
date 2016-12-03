@@ -9,18 +9,12 @@ public class WellFormatParenthesis {
     private List<Character> allowedCharacters = new ArrayList<Character>();
 
 
-    /**
-     * Initialize well format key value pairs.
-     */
     private void initializeWellFormatCharacters() {
         wellFormatCharacters.put('(', ')');
         wellFormatCharacters.put('{', '}');
         wellFormatCharacters.put('[', ']');
     }
 
-    /**
-     * Initialize allowed characters for input string
-     */
     private void initializeAllowedCharacters() {
         allowedCharacters.add('(');
         allowedCharacters.add(')');
@@ -30,10 +24,6 @@ public class WellFormatParenthesis {
         allowedCharacters.add(']');
     }
 
-    /**
-     * @param input
-     * @return
-     */
     public boolean isWellFormat(String input) {
         initializeAllowedCharacters();
         initializeWellFormatCharacters();
@@ -44,10 +34,10 @@ public class WellFormatParenthesis {
             Stack<Character> stack = new Stack<Character>();
 
             for (Character c : input.toCharArray()) {
-                if (checkAcceptedCharacter(c)) {
-                    if (checkKeyValues(c)) {
+                if (isCharacterAllowedCharacter(c)) {
+                    if (isCharacterWellFormatKey(c)) {
                         stack.push(c);
-                    } else if (checkValues(c)) {
+                    } else if (isCharacterWellFormatValue(c)) {
                         if (!stack.isEmpty()) {
                             stack.pop();
                         } else {
@@ -62,15 +52,11 @@ public class WellFormatParenthesis {
 
     }
 
-    private boolean checkAcceptedCharacter(char c) {
+    private boolean isCharacterAllowedCharacter(char c) {
         return allowedCharacters.contains(c) ? true : false;
     }
 
-    /**
-     * @param c
-     * @return
-     */
-    private boolean checkKeyValues(Character c) {
+    private boolean isCharacterWellFormatKey(Character c) {
         for (Map.Entry<Character, Character> entry : wellFormatCharacters.entrySet()) {
             if (entry.getKey().equals(c)) {
                 return true;
@@ -79,11 +65,7 @@ public class WellFormatParenthesis {
         return false;
     }
 
-    /**
-     * @param c
-     * @return
-     */
-    private boolean checkValues(Character c) {
+    private boolean isCharacterWellFormatValue(Character c) {
         for (Map.Entry<Character, Character> entry : wellFormatCharacters.entrySet()) {
             if (entry.getValue().equals(c)) {
                 return true;
