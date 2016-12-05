@@ -1,4 +1,4 @@
-package elementsofprogramming;
+package elementsofprogramming.arrays;
 
 import constants.EnumCollectionError;
 import elementsofprogramming.arrays.DeleteDuplicates;
