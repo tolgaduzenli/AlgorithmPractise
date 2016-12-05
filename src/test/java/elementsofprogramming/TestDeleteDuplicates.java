@@ -1,7 +1,7 @@
 package elementsofprogramming;
 
 import constants.EnumCollectionError;
-import elementsofprogramming.primitivetypes.DeleteDuplicates;
+import elementsofprogramming.arrays.DeleteDuplicates;
 import exception.NullEmptyCollectionException;
 import org.junit.BeforeClass;
 import org.junit.Test;

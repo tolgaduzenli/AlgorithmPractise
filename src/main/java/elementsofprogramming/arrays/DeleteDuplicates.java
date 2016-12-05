@@ -1,4 +1,4 @@
-package elementsofprogramming.primitivetypes;
+package elementsofprogramming.arrays;
 
 import constants.EnumCollectionError;
 import exception.NullEmptyCollectionException;
