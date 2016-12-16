@@ -50,6 +50,16 @@ public class TestInterConverter {
         assertEquals(Integer.parseInt("0"), interConverter.stringToInt("0"));
     }
 
+    @Test(expected = NumberFormatException.class)
+    public void testStringToIntWitNonDigitValue() throws NullOrEmptyParameterException {
+        interConverter.stringToInt("#$%211");
+    }
+
+    @Test(expected = NumberFormatException.class)
+    public void testStringToIntWitNonIntegerValue() throws NullOrEmptyParameterException {
+        interConverter.stringToInt("2147483649");
+    }
+
     @Test
     public void testIntToStringWithMaxInteger() {
         String intToString = interConverter.intToString(Integer.MAX_VALUE);
