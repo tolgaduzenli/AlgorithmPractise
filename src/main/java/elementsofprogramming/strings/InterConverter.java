@@ -4,9 +4,6 @@ import constants.EnumParameterErrorCodes;
 import exception.NullOrEmptyParameterException;
 import util.StringUtils;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 /**
  * @author Tolga Duzenli on 13-Dec-2016.
  *         This class provides converter from string to int and int to string.
@@ -28,11 +25,9 @@ public class InterConverter {
     }
 
     public int stringToInt(String s) throws NullOrEmptyParameterException {
-        if (StringUtils.isBlank(s)) {
-            throw new NullOrEmptyParameterException(EnumParameterErrorCodes.NULL_OR_EMPTY_STRING);
-        }
+        StringUtils.checkNullOrEmptyParameter(s);
         int i = s.charAt(0) == '-' ? 1 : 0;
-        checkParameter(s.substring(i, s.length()));
+        StringUtils.checkDigits(s.substring(i, s.length()));
         int result = 0;
         for (; i < s.length(); i++) {
             int digit = s.charAt(i) - '0';
@@ -44,11 +39,5 @@ public class InterConverter {
         return s.charAt(0) == '-' ? -result : result;
     }
 
-    private void checkParameter(String s) {
-        Pattern pattern = Pattern.compile("^[0-9]+$");
-        Matcher matcher = pattern.matcher(s);
-        if (!matcher.find()) {
-            throw new NumberFormatException(EnumParameterErrorCodes.WRONG_PARAMETER.toString());
-        }
-    }
+
 }

@@ -24,13 +24,7 @@ public class ColumnIdDecoder {
     }
 
     private void checkParameter(String col) throws NullOrEmptyParameterException {
-        if (StringUtils.isBlank(col)) {
-            throw new NullOrEmptyParameterException(EnumParameterErrorCodes.NULL_OR_EMPTY_STRING);
-        }
-        Pattern pattern = Pattern.compile("^[A-Z]+$");
-        Matcher matcher = pattern.matcher(col);
-        if (!matcher.find()) {
-            throw new NumberFormatException(EnumParameterErrorCodes.WRONG_PARAMETER.toString());
-        }
+        StringUtils.checkNullOrEmptyParameter(col);
+        StringUtils.checkCapitalLetters(col);
     }
 }
