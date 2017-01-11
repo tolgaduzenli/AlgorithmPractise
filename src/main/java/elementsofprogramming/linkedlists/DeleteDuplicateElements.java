@@ -1,5 +1,8 @@
 package elementsofprogramming.linkedlists;
 
+import java.util.Deque;
+import java.util.LinkedList;
+
 /**
  * @author Tolga Duzenli on 12/28/16.
  *         This class deletes duplicate elements from given list.
@@ -24,4 +27,6 @@ public class DeleteDuplicateElements {
         }
         return head;
     }
+
+    Deque<Integer> list = new LinkedList<>();
 }

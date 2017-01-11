@@ -4,7 +4,7 @@ import elementsofprogramming.linkedlists.Cyclicity;
 import elementsofprogramming.linkedlists.ListNode;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import util.LinkListUtil;
+import util.LinkedListUtil;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -36,13 +36,13 @@ public class TestCyclicity {
 
     @Test
     public void testCycleList() {
-        ListNode<Integer> list = cyclicity.hasCycle(LinkListUtil.createCycleList());
+        ListNode<Integer> list = cyclicity.hasCycle(LinkedListUtil.createCycleList());
         assertNotNull(list);
     }
 
     @Test
     public void showStartPointOfCycle() {
-        ListNode<Integer> list = cyclicity.hasCycle(LinkListUtil.createCycleList());
+        ListNode<Integer> list = cyclicity.hasCycle(LinkedListUtil.createCycleList());
         assertNotNull(list);
         assertEquals(list.data, new Integer(11));
         System.out.println(list.data);

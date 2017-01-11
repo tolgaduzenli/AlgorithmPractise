@@ -4,7 +4,7 @@ import elementsofprogramming.linkedlists.ListNode;
 import elementsofprogramming.linkedlists.MergeTwoSortedList;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import util.LinkListUtil;
+import util.LinkedListUtil;
 
 /**
  * @author Tolga Duzenli on 12/24/16.
@@ -20,9 +20,9 @@ public class TestMergeTwoSortedList {
 
     @Test
     public void testWithTwoSortedList() {
-        ListNode<Integer> mergedList = mergeTwoSortedList.mergeTwoSortedList(LinkListUtil.createListL1(),
-                LinkListUtil.createListL2());
-        LinkListUtil.printList("Test Two sorted list", mergedList);
+        ListNode<Integer> mergedList = mergeTwoSortedList.mergeTwoSortedList(LinkedListUtil.createListL1(),
+                LinkedListUtil.createListL2());
+        LinkedListUtil.printList("Test Two sorted list", mergedList);
     }
 
 }

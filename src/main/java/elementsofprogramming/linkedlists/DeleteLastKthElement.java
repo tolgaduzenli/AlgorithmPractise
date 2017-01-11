@@ -1,5 +1,7 @@
 package elementsofprogramming.linkedlists;
 
+import java.util.PriorityQueue;
+
 /**
  * @author Tolga Duzenli on 12/28/16.
  *         This class deletes last k th element from list.

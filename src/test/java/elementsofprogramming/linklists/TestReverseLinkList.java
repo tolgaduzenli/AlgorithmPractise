@@ -5,7 +5,7 @@ import elementsofprogramming.linkedlists.ReverseLinkList;
 import exception.WrongParameterException;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import util.LinkListUtil;
+import util.LinkedListUtil;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
@@ -38,7 +38,7 @@ public class TestReverseLinkList {
 
     @Test(expected = WrongParameterException.class)
     public void testWithWrongOrder() throws WrongParameterException {
-        ListNode<Integer> L = LinkListUtil.createSingleList();
+        ListNode<Integer> L = LinkedListUtil.createSingleList();
         reverseLinkList.reverseSublist(L, 5, 2);
     }
 
@@ -46,20 +46,20 @@ public class TestReverseLinkList {
     //expected List = 5, 2, 11, 3, 9, 7
     @Test
     public void testWithFirstNode() throws WrongParameterException {
-        ListNode<Integer> L = LinkListUtil.createSingleList();
-        LinkListUtil.printList("Original List", L);
+        ListNode<Integer> L = LinkedListUtil.createSingleList();
+        LinkedListUtil.printList("Original List", L);
         ListNode<Integer> reversedList = reverseLinkList.reverseSublist(L, 1, 5);
-        LinkListUtil.printList("Test reverseSublist with first Node, start: 1, finish: 5", reversedList);
+        LinkedListUtil.printList("Test reverseSublist with first Node, start: 1, finish: 5", reversedList);
     }
 
     // List = 9,3,11,2,5,7
     //expected List = 9, 5, 2, 11, 3, 7
     @Test
     public void testSublistSuccessfulCase() throws WrongParameterException {
-        ListNode<Integer> L = LinkListUtil.createSingleList();
-        LinkListUtil.printList("Original List", L);
+        ListNode<Integer> L = LinkedListUtil.createSingleList();
+        LinkedListUtil.printList("Original List", L);
         ListNode<Integer> reversedList = reverseLinkList.reverseSublist(L, 2, 5);
-        LinkListUtil.printList("Test reverseSublist with successful case, start: 2, finish: 5", reversedList);
+        LinkedListUtil.printList("Test reverseSublist with successful case, start: 2, finish: 5", reversedList);
     }
 
     @Test
@@ -70,10 +70,10 @@ public class TestReverseLinkList {
 
     @Test
     public void testReverseWithSuccessfulCase() {
-        ListNode<Integer> L = LinkListUtil.createSingleList();
-        LinkListUtil.printList("Original List", L);
+        ListNode<Integer> L = LinkedListUtil.createSingleList();
+        LinkedListUtil.printList("Original List", L);
         ListNode<Integer> reversedList = reverseLinkList.reverseList(L);
-        LinkListUtil.printList("Reversed List", reversedList);
+        LinkedListUtil.printList("Reversed List", reversedList);
     }
 
 }
