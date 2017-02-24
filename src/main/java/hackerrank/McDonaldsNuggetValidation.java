@@ -16,4 +16,23 @@ public class McDonaldsNuggetValidation {
                 || isNuggetNumberValid(n - 9)
                 || isNuggetNumberValid(n - 20)));
     }
+
+    public boolean isValid(int n) {
+        boolean result;
+        if(n < 6){
+            return false;
+        }
+        if (n - 20 == 0 || n - 9 == 0 || n - 6 == 0) {
+            result = true;
+        } else  {
+            result = isValid(n - 20);
+            if(!result){
+                result = isValid(n-9);
+                if(!result){
+                    result = isValid(n-6);
+                }
+            }
+        }
+        return result;
+    }
 }
